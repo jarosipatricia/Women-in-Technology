@@ -8,7 +8,7 @@ export default function ArticlesComponent() {
       <div className="articles">
         <h1>Articles & Blogs</h1>
 
-        <div>
+        <div data-testid="subtext">
           {blogs.map((blog, index) => (
             <ArticleContainer blog={blog} key={index} />
           ))}
