@@ -4,6 +4,10 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 //import "@testing-library/jest-dom/extend-expect";
 import userEvent from '@testing-library/user-event';
 
+afterEach(() => {
+  cleanup()
+});
+
 test('all the elements are successfully rendered on the screen', () => { 
   const component = render(<Subscribe />);
   const headerElement = component.getByTestId("subtitle");
