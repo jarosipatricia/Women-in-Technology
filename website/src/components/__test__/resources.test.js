@@ -1,5 +1,5 @@
 import React from 'react';
-import Resources from '../Resources/ResourcesComponent';
+import Resources from '../Resources/resourcesComponent';
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
