@@ -1,10 +1,8 @@
 import React from 'react';
 import Subscribe from '../Subscribe/index';
-import { cleanup, fireEvent, getByTestId, render, screen, waitFor } from "@testing-library/react";
-import { unmountComponentAtNode } from "react-dom";
-import "@testing-library/jest-dom/extend-expect";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+//import "@testing-library/jest-dom/extend-expect";
 import userEvent from '@testing-library/user-event';
-import user from "@testing-library/user-event";
 
 afterEach(() => {
   cleanup()
