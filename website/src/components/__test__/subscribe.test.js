@@ -2,7 +2,7 @@ import React from 'react';
 import Subscribe from '../Subscribe/index';
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 //import "@testing-library/jest-dom/extend-expect";
-import userEvent from '@testing-library/user-event';
+//import userEvent from '@testing-library/user-event';
 
 afterEach(() => {
   cleanup()
@@ -78,14 +78,14 @@ test('click on a specific part of a text leads to an another website', () => {
 test('button is clickable, onClick is not throwing error', () => { 
   const component = render(<Subscribe />);
   const buttonElement = component.getByTestId("subbuton");
-  userEvent.click(buttonElement)
+  fireEvent.click(buttonElement)
   expect(window.location.href).not.toEqual("https://shegazette.co/index.html")
 });
 
 test('icon is clickable, onClick is not throwing error', () => {
   const component = render(<Subscribe />);
   const buttonElement = component.getByTestId("subimg");
-  userEvent.click(buttonElement)
+  fireEvent.click(buttonElement)
   expect(window.location.href).not.toEqual("https://shegazette.co/index.html")
 });
 
@@ -98,7 +98,7 @@ test('clicking on main button will call the mocked onClick', () => {
     </button>
   );
   expect(location).toBe("http://localhost/");
-  userEvent.click(screen.getByText('Click'));
+  fireEvent.click(screen.getByText('Click'));
   expect(mockedOnClick).toHaveBeenCalledTimes(1);
   expect(location).toBe("https://shegazette.co/index.html");
 });
@@ -116,7 +116,7 @@ test('after onClick mocked onClick is called and changes the url', () => {
     </button>
   );
 
-  userEvent.click(screen.getByText('subscribe'));
+  fireEvent.click(screen.getByText('subscribe'));
   expect(mockedClick).toHaveBeenCalledTimes(1);
   expect(window.location.href).toBe("https://shegazette.co/index.html");
   window.location = oldLocation;
