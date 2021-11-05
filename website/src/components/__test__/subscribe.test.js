@@ -78,14 +78,14 @@ test('click on a specific part of a text leads to an another website', () => {
 test('button is clickable, onClick is not throwing error', () => { 
   const component = render(<Subscribe />);
   const buttonElement = component.getByTestId("subbuton");
-  fireEvent.click(buttonElement)
+  userEvent.click(buttonElement)
   expect(window.location.href).not.toEqual("https://shegazette.co/index.html")
 });
 
 test('icon is clickable, onClick is not throwing error', () => {
   const component = render(<Subscribe />);
   const buttonElement = component.getByTestId("subimg");
-  fireEvent.click(buttonElement)
+  userEvent.click(buttonElement)
   expect(window.location.href).not.toEqual("https://shegazette.co/index.html")
 });
 
