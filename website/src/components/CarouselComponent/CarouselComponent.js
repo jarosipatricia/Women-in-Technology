@@ -2,10 +2,10 @@ import React from "react";
 
 import "./carousel.css";
 
-import slide1 from "../../images/carousel/carousel1.png";
-import slide2 from "../../images/carousel/carousel2_2.png";
-import slide3 from "../../images/carousel/carousel3_2.png";
-import slide4 from "../../images/carousel/carousel4_2.png";
+import slide1 from "../../images/carousel/carousel1.webp";
+import slide2 from "../../images/carousel/carousel2_2.webp";
+import slide3 from "../../images/carousel/carousel3_2.webp";
+import slide4 from "../../images/carousel/carousel4_2.webp";
 
 export default function ControlledCarousel() {
   return (

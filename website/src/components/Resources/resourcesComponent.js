@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "./resourcesStyles.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { GithubRepos } from "../../data/githubRepo";
 import { blogs } from "../../data/blogs";
-import Infographics from '../inforgraphic/infographics'
-import Divider from "../Divider";
+//import Infographics from '../inforgraphic/infographics'
+//import Divider from "../Divider";
 // image
 import image from "../../images/social/github.png";
+
+const Divider = React.lazy(() => import('../Divider'));
+const Infographics = React.lazy(() => import('../inforgraphic/infographics'));
 
 export default function ResourcesComponent() {
   return (
@@ -22,7 +25,10 @@ export default function ResourcesComponent() {
           <h1>World of CS Page &gt; </h1>
         </Link>
       </div> */}
- <Divider />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Divider />
+      </Suspense>
+ 
       <div className="articles pt-lg-4 pt-lg-1">
         <h1 className="pb-lg-4 pb-md-1">Articles & Blogs</h1>
 
@@ -52,7 +58,9 @@ export default function ResourcesComponent() {
         </div>
       </div>
 
-      <Divider />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Divider />
+      </Suspense>
 
       <div className="articles">
         <h1 className="pt-4 pb-4">GITHUB Repositories to Star</h1>
@@ -80,9 +88,13 @@ export default function ResourcesComponent() {
           </a>
         </div>
       </div>
-      <Divider />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Divider />
+      </Suspense>
       <div className="pt-lg-4 pt-md-1 pb-lg-4 pb-md-1">
-      <Infographics />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Infographics />
+      </Suspense>
       </div>
       
     </div>
